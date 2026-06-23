@@ -43,7 +43,16 @@ PUBLIC_DISTANCE_COLS = [
 
 
 def default_data_dir() -> Path:
-    return Path(os.environ.get("PRAXIS_DATA_DIR", "/opt/praxis")).expanduser().resolve()
+    env = os.environ.get("PRAXIS_DATA_DIR")
+    if env:
+        return Path(env).expanduser().resolve()
+
+    repo_root = Path(__file__).resolve().parents[2]
+    examples = repo_root / "examples"
+    if examples.exists():
+        return examples.resolve()
+
+    return Path("/opt/praxis").resolve()
 
 
 def default_public_baseline() -> Path:

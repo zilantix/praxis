@@ -5,7 +5,20 @@ import json
 import pandas as pd
 import numpy as np
 
-BASE = Path(os.environ.get("PRAXIS_DATA_DIR", "/opt/praxis")).expanduser().resolve()
+def _default_base() -> Path:
+    env = os.environ.get("PRAXIS_DATA_DIR")
+    if env:
+        return Path(env).expanduser().resolve()
+
+    repo_root = Path(__file__).resolve().parents[2]
+    examples = repo_root / "examples"
+    if examples.exists():
+        return examples.resolve()
+
+    return Path("/opt/praxis").resolve()
+
+
+BASE = _default_base()
 
 PATHS = {
     "phase17_scores": BASE / "solution/reports/phase17_confirm_config_scores.csv",

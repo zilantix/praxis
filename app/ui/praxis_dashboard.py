@@ -1,5 +1,16 @@
+# PRAXIS portable path bootstrap
 import sys
-sys.path.insert(0, "/opt/praxis/app/lib")
+from pathlib import Path
+
+_HERE = Path(__file__).resolve()
+for _p in [_HERE.parent, *_HERE.parents]:
+    _candidate = _p / "app" / "lib"
+    if _candidate.exists():
+        sys.path.insert(0, str(_candidate))
+        break
+# End PRAXIS portable path bootstrap
+
+import sys
 
 import pandas as pd
 import streamlit as st
