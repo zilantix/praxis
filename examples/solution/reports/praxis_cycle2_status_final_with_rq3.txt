@@ -1,0 +1,32 @@
+PRAXIS Cycle 2 final status with RQ3
+
+completed_utc=2026-06-17T04:08:10Z
+client=praxis-client-cycle2
+client_ip=LAB_PRIVATE_IP
+
+Traffic-camouflage result:
+- best confirmed configuration: default_c2_p1
+- baseline detector probability: 1.000000
+- default_c2_p1 detector probability: 0.487000
+- detector delta: -0.513000
+- baseline corrected score: 0.654073
+- default_c2_p1 corrected score: 0.432949
+- score delta: -0.221124
+- compliance: 100%
+
+Fresh-detector robustness:
+- strict_unseen baseline probability: 0.959737
+- strict_unseen default_c2_p1 probability: 0.666053
+- baseline_known baseline probability: 0.998023
+- baseline_known default_c2_p1 probability: 0.663093
+- binary detection remained positive under tested thresholds
+
+RQ3 resolver-independence result:
+- standard_dns_lab: n=30 success=30
+- dns_blocked: n=30 success=0
+- decentralized_resolution: n=30 success=30
+
+Final interpretation:
+PRAXIS Cycle 2 validates an adaptive configuration-selection framework.
+It confirms detector-confidence reduction, public-benign scoring, out-of-sample confirmation, fresh-detector robustness, and controlled resolver-independence.
+It does not confirm complete detector bypass, real-world censorship evasion, or production blockchain DDNS integration.

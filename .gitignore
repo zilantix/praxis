@@ -1,0 +1,63 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+ENV/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# OS/editor
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Secrets and credentials
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa
+id_ed25519
+credentials
+credentials.*
+aws_credentials
+.aws/
+*.kubeconfig
+
+# PRAXIS raw/sensitive artifacts
+*.pcap
+*.pcapng
+*.cap
+*.har
+*.log
+uploads/
+exports/
+private/
+raw/
+pcaps/
+logs/
+models/*.joblib
+*.joblib
+
+# Large archives
+*.tar
+*.tar.gz
+*.zip
+*.7z
+*.gz
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Local outputs
+app/uploads/
+app/exports/

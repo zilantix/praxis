@@ -1,0 +1,5 @@
+| RQ | Question | Status | Evidence | Boundary |
+|---|---|---|---|---|
+| RQ1 | Do browser/profile and proxy configurations reduce non-timing proxy detector confidence while preserving compliance? | Confirmed with boundary | Phase 17: default_c2_p1 reduced detector probability from 1.000 to 0.487 with 100% compliance. | Detector-confidence reduction, not complete detector bypass. |
+| RQ2 | How do multiplexing mode and browser-side parallelism affect proxy-traffic identifiability? | Confirmed / mechanism suggested | default_c2_p1 beat camouflaged_c2_p1, suggesting c2 multiplexing with parallel=1 is the main driver. | Mechanism explanation should be supported by feature-delta analysis. |
+| RQ3 | Can the selected configuration preserve access under DNS blocking with decentralized-style resolution? | Confirmed at controlled resolver-independence level | Phase 21: standard_dns_lab n=30 success=30; dns_blocked n=30 success=0; decentralized_resolution n=30 success=30. | Controlled local mapping, not production blockchain DDNS. |
