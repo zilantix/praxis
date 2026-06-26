@@ -75,7 +75,7 @@ delta:
 
 Fresh holdout detectors confirmed lower detector confidence for `default_c2_p1`, but binary detection remained positive under tested thresholds.
 
-Phase 21 confirmed controlled resolver-independence:
+Experiment confirmed controlled resolver-independence:
 
 ```text
 standard_dns_lab succeeds
@@ -99,13 +99,13 @@ The result shows that PRAXIS can:
 6. confirm the selected configuration out of sample,
 7. validate controlled resolver independence under DNS-blocking conditions.
 
-The strongest supported claim is:
+
 
 ```text
 PRAXIS reduced detector confidence under the PRAXIS lab threat model and provides a reusable adaptive configuration-selection framework.
 ```
 
-The result should **not** be described as complete detector bypass.
+The result **not** describes as complete detector bypass.
 
 ---
 
@@ -204,7 +204,7 @@ Researchers can upload their own packet captures and generate PRAXIS-compatible 
 
 ## Research Questions
 
-PRAXIS Cycle 2 uses three research questions close to the original project framing.
+PRAXIS Experiment uses three research questions close to the original project framing.
 
 ### RQ1
 
@@ -312,7 +312,7 @@ FastAPI API
 Streamlit GUI
 ```
 
-The PCAP Analyzer is included as a Streamlit page.
+The PCAP Analyzer is included as a Streamlit page https://praxis-controller.streamlit.app/
 
 ---
 
@@ -366,7 +366,7 @@ A configuration that reduces detector confidence but breaks the connection is no
 
 ---
 
-## Confirmed Cycle 2 Results
+## Confirmed Experiment Results
 
 ### Phase 17 Confirmatory Result
 
