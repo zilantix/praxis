@@ -34,7 +34,3 @@ Do not commit:
 ## Reporting vulnerabilities
 
 If you find a security issue in PRAXIS code, open a private issue or contact the maintainer directly.
-
-## Token handling
-
-Never hardcode personal access tokens in code, documentation, Git remotes, shell history, notebooks, or CI logs.
