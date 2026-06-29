@@ -1,0 +1,28 @@
+PRAXIS Phase 29B Artifact-Control Mechanism Check
+
+Purpose:
+Check whether default_c2_p1 remains distinguishable after removing obvious separator features.
+
+Results:
+all_no_pcap_size / logistic: n_features=29, auc=1.000000, accuracy_050=1.000000, baseline_mean=0.005864, default_c2_p1_mean=0.993955, delta=0.988091
+all_no_pcap_size / random_forest: n_features=29, auc=1.000000, accuracy_050=1.000000, baseline_mean=0.002466, default_c2_p1_mean=0.996625, delta=0.994160
+no_duration / logistic: n_features=28, auc=1.000000, accuracy_050=1.000000, baseline_mean=0.006361, default_c2_p1_mean=0.993425, delta=0.987065
+no_duration / random_forest: n_features=28, auc=1.000000, accuracy_050=1.000000, baseline_mean=0.004209, default_c2_p1_mean=0.995468, delta=0.991259
+no_packet_counts / logistic: n_features=25, auc=1.000000, accuracy_050=1.000000, baseline_mean=0.007535, default_c2_p1_mean=0.992234, delta=0.984699
+no_packet_counts / random_forest: n_features=25, auc=1.000000, accuracy_050=1.000000, baseline_mean=0.003659, default_c2_p1_mean=0.995143, delta=0.991484
+no_duration_no_counts / logistic: n_features=24, auc=1.000000, accuracy_050=1.000000, baseline_mean=0.008424, default_c2_p1_mean=0.991304, delta=0.982880
+no_duration_no_counts / random_forest: n_features=24, auc=1.000000, accuracy_050=1.000000, baseline_mean=0.010402, default_c2_p1_mean=0.987105, delta=0.976703
+payload_only / logistic: n_features=3, auc=1.000000, accuracy_050=1.000000, baseline_mean=0.034052, default_c2_p1_mean=0.966462, delta=0.932410
+signed_lengths_only / logistic: n_features=20, auc=1.000000, accuracy_050=1.000000, baseline_mean=0.011314, default_c2_p1_mean=0.988424, delta=0.977110
+signed_lengths_only / random_forest: n_features=20, auc=1.000000, accuracy_050=1.000000, baseline_mean=0.005835, default_c2_p1_mean=0.992418, delta=0.986583
+signed_lengths_no_6 / logistic: n_features=19, auc=1.000000, accuracy_050=1.000000, baseline_mean=0.013565, default_c2_p1_mean=0.986099, delta=0.972534
+signed_lengths_no_6 / random_forest: n_features=19, auc=1.000000, accuracy_050=1.000000, baseline_mean=0.005384, default_c2_p1_mean=0.993387, delta=0.988003
+payload_only / random_forest: n_features=3, auc=1.000000, accuracy_050=0.990000, baseline_mean=0.035934, default_c2_p1_mean=0.963738, delta=0.927804
+burst_only / logistic: n_features=1, auc=0.993400, accuracy_050=0.970000, baseline_mean=0.108751, default_c2_p1_mean=0.890055, delta=0.781304
+burst_only / random_forest: n_features=1, auc=0.993400, accuracy_050=0.970000, baseline_mean=0.054639, default_c2_p1_mean=0.951965, delta=0.897326
+
+Interpretation guide:
+- If no_duration and no_duration_no_counts remain high, the mechanism is not only session duration.
+- If payload_only or signed_lengths_only remain high, the mechanism includes payload balance or packet-shape effects.
+- If only duration/count features work, describe the mechanism as duration/count compression rather than broad camouflage.
+- This remains a lab mechanism explanation, not universal causality.

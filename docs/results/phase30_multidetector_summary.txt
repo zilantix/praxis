@@ -1,0 +1,55 @@
+PRAXIS Phase 30 Multi-Detector Robustness
+
+Purpose:
+Evaluate whether default_c2_p1 remains lower-confidence than baseline across multiple detector families.
+
+Training:
+positive_proxy_sessions=170
+negative_public_sessions=1000
+public_negatives=MAWI active + MAWI 2024-03-02
+phase17_confirm_sessions_excluded_from_training=true
+
+Detector training/holdout summary:
+- logistic: train_auc=1.000000, train_f1=1.000000, public_fpr_050=0.003865
+- random_forest: train_auc=1.000000, train_f1=1.000000, public_fpr_050=0.000000
+- extra_trees: train_auc=1.000000, train_f1=1.000000, public_fpr_050=0.000000
+- gradient_boosting: train_auc=1.000000, train_f1=1.000000, public_fpr_050=0.000000
+- linear_svc_calibrated: train_auc=1.000000, train_f1=1.000000, public_fpr_050=0.002416
+
+Phase 17 evaluation by detector:
+Detector=extra_trees
+  default_c2_p1: mean_probability=0.838589, delta_vs_baseline=-0.156160, detection_rate_050=1.000000, n=50
+  camouflaged_c2_p1: mean_probability=0.840502, delta_vs_baseline=-0.154247, detection_rate_050=1.000000, n=50
+  baseline_default_off: mean_probability=0.994749, delta_vs_baseline=0.000000, detection_rate_050=1.000000, n=50
+Detector=gradient_boosting
+  camouflaged_c2_p1: mean_probability=0.999679, delta_vs_baseline=-0.000287, detection_rate_050=1.000000, n=50
+  default_c2_p1: mean_probability=0.999679, delta_vs_baseline=-0.000287, detection_rate_050=1.000000, n=50
+  baseline_default_off: mean_probability=0.999965, delta_vs_baseline=0.000000, detection_rate_050=1.000000, n=50
+Detector=linear_svc_calibrated
+  default_c2_p1: mean_probability=0.947009, delta_vs_baseline=-0.009679, detection_rate_050=1.000000, n=50
+  baseline_default_off: mean_probability=0.956688, delta_vs_baseline=0.000000, detection_rate_050=1.000000, n=50
+  camouflaged_c2_p1: mean_probability=0.956733, delta_vs_baseline=0.000045, detection_rate_050=1.000000, n=50
+Detector=logistic
+  baseline_default_off: mean_probability=0.995340, delta_vs_baseline=0.000000, detection_rate_050=1.000000, n=50
+  default_c2_p1: mean_probability=0.995822, delta_vs_baseline=0.000482, detection_rate_050=1.000000, n=50
+  camouflaged_c2_p1: mean_probability=0.996484, delta_vs_baseline=0.001144, detection_rate_050=1.000000, n=50
+Detector=random_forest
+  default_c2_p1: mean_probability=0.580344, delta_vs_baseline=-0.381856, detection_rate_050=0.980000, n=50
+  camouflaged_c2_p1: mean_probability=0.606267, delta_vs_baseline=-0.355933, detection_rate_050=1.000000, n=50
+  baseline_default_off: mean_probability=0.962200, delta_vs_baseline=0.000000, detection_rate_050=1.000000, n=50
+
+Statistical validation:
+- logistic default_c2_p1: baseline_mean=0.995340, candidate_mean=0.995822, delta=0.000482, pct_delta=0.05%, ci=[-0.000485,0.001533], p=0.353265
+- logistic camouflaged_c2_p1: baseline_mean=0.995340, candidate_mean=0.996484, delta=0.001144, pct_delta=0.11%, ci=[0.000159,0.002185], p=0.026597
+- random_forest default_c2_p1: baseline_mean=0.962200, candidate_mean=0.580344, delta=-0.381856, pct_delta=-39.69%, ci=[-0.408613,-0.352930], p=0.000100
+- random_forest camouflaged_c2_p1: baseline_mean=0.962200, candidate_mean=0.606267, delta=-0.355933, pct_delta=-36.99%, ci=[-0.384630,-0.326591], p=0.000100
+- extra_trees default_c2_p1: baseline_mean=0.994749, candidate_mean=0.838589, delta=-0.156160, pct_delta=-15.70%, ci=[-0.160690,-0.151477], p=0.000100
+- extra_trees camouflaged_c2_p1: baseline_mean=0.994749, candidate_mean=0.840502, delta=-0.154247, pct_delta=-15.51%, ci=[-0.160083,-0.148520], p=0.000100
+- gradient_boosting default_c2_p1: baseline_mean=0.999965, candidate_mean=0.999679, delta=-0.000287, pct_delta=-0.03%, ci=[-0.000287,-0.000287], p=0.000100
+- gradient_boosting camouflaged_c2_p1: baseline_mean=0.999965, candidate_mean=0.999679, delta=-0.000287, pct_delta=-0.03%, ci=[-0.000287,-0.000287], p=0.000100
+- linear_svc_calibrated default_c2_p1: baseline_mean=0.956688, candidate_mean=0.947009, delta=-0.009679, pct_delta=-1.01%, ci=[-0.017403,-0.001845], p=0.019898
+- linear_svc_calibrated camouflaged_c2_p1: baseline_mean=0.956688, candidate_mean=0.956733, delta=0.000045, pct_delta=0.00%, ci=[-0.007882,0.007760], p=0.992001
+
+Interpretation:
+If default_c2_p1 remains below baseline across detector families, this strengthens the PRAXIS robustness claim.
+If binary detection_rate_050 remains 1.0, claim confidence reduction, not complete detector bypass.

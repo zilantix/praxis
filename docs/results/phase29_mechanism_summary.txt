@@ -1,0 +1,72 @@
+PRAXIS Phase 29 Mechanism Analysis
+
+Purpose:
+Explain why default_c2_p1 reduced detector confidence relative to baseline_default_off.
+
+Input:
+- /opt/praxis/solution/reports/phase17_confirm_session_scores.csv
+
+Compared configurations:
+- baseline: baseline_default_off
+- best confirmed: default_c2_p1
+- camouflage comparison: camouflaged_c2_p1
+
+Binary mechanism model: baseline_default_off vs default_c2_p1
+n_rows=100
+n_baseline=50
+n_default_c2_p1=50
+logistic_auc=1.000000
+random_forest_auc=1.000000
+logistic_accuracy_050=1.000000
+random_forest_accuracy_050=1.000000
+
+Top feature deltas for default_c2_p1 vs baseline by absolute Cohen's d:
+- flow_duration_seconds: baseline_mean=1.143058, default_c2_p1_mean=0.188341, delta=-0.954717, pct_delta=-83.52%, cohen_d=-313.323775, p=0.000000
+- in_payload_bytes: baseline_mean=4831.000000, default_c2_p1_mean=4965.480000, delta=134.480000, pct_delta=2.78%, cohen_d=26.882398, p=0.000000
+- packet_count: baseline_mean=68.820000, default_c2_p1_mean=53.780000, delta=-15.040000, pct_delta=-21.85%, cohen_d=-10.226662, p=0.000000
+- out_packets: baseline_mean=35.080000, default_c2_p1_mean=26.840000, delta=-8.240000, pct_delta=-23.49%, cohen_d=-9.457009, p=0.000000
+- in_packets: baseline_mean=33.740000, default_c2_p1_mean=26.940000, delta=-6.800000, pct_delta=-20.15%, cohen_d=-9.295882, p=0.000000
+- pcap_size_bytes: baseline_mean=21493.320000, default_c2_p1_mean=20321.040000, delta=-1172.280000, pct_delta=-5.45%, cohen_d=-7.786430, p=0.000000
+- burst_count: baseline_mean=43.080000, default_c2_p1_mean=33.840000, delta=-9.240000, pct_delta=-21.45%, cohen_d=-4.040922, p=0.000000
+- total_payload_bytes: baseline_mean=15349.160000, default_c2_p1_mean=15548.400000, delta=199.240000, pct_delta=1.30%, cohen_d=2.753644, p=0.000000
+- out_payload_bytes: baseline_mean=10518.160000, default_c2_p1_mean=10582.920000, delta=64.760000, pct_delta=0.62%, cohen_d=0.894077, p=0.000008
+- len_19: baseline_mean=0.000000, default_c2_p1_mean=-2.280000, delta=-2.280000, pct_delta=nan%, cohen_d=-0.596437, p=0.000285
+- len_16: baseline_mean=-29.280000, default_c2_p1_mean=0.000000, delta=29.280000, pct_delta=-100.00%, cohen_d=0.412837, p=0.043295
+- len_18: baseline_mean=0.000000, default_c2_p1_mean=-0.360000, delta=-0.360000, pct_delta=nan%, cohen_d=-0.353704, p=0.082184
+- len_17: baseline_mean=-234.240000, default_c2_p1_mean=-270.960000, delta=-36.720000, pct_delta=15.68%, cohen_d=-0.213157, p=0.000000
+- len_20: baseline_mean=448.520000, default_c2_p1_mean=570.080000, delta=121.560000, pct_delta=27.10%, cohen_d=0.136714, p=0.570848
+- len_4: baseline_mean=1773.080000, default_c2_p1_mean=1776.960000, delta=3.880000, pct_delta=0.22%, cohen_d=0.109391, p=0.137420
+
+Top random-forest permutation-importance features:
+- packet_count: permutation_importance=0.000000, rf_importance=0.091939, logistic_coef=-0.432177
+- out_packets: permutation_importance=0.000000, rf_importance=0.105831, logistic_coef=-0.429600
+- in_packets: permutation_importance=0.000000, rf_importance=0.096360, logistic_coef=-0.432069
+- unknown_packets: permutation_importance=0.000000, rf_importance=0.000000, logistic_coef=0.000000
+- out_payload_bytes: permutation_importance=0.000000, rf_importance=0.001301, logistic_coef=0.054054
+- in_payload_bytes: permutation_importance=0.000000, rf_importance=0.115245, logistic_coef=0.452222
+- total_payload_bytes: permutation_importance=0.000000, rf_importance=0.009624, logistic_coef=0.295195
+- flow_duration_seconds: permutation_importance=0.000000, rf_importance=0.102547, logistic_coef=-0.450840
+- burst_count: permutation_importance=0.000000, rf_importance=0.039568, logistic_coef=-0.381145
+- len_1: permutation_importance=0.000000, rf_importance=0.000000, logistic_coef=0.000000
+- len_2: permutation_importance=0.000000, rf_importance=0.000000, logistic_coef=0.000000
+- len_3: permutation_importance=0.000000, rf_importance=0.000000, logistic_coef=0.000000
+- len_4: permutation_importance=0.000000, rf_importance=0.001359, logistic_coef=-0.006956
+- len_5: permutation_importance=0.000000, rf_importance=0.000000, logistic_coef=0.000000
+- len_6: permutation_importance=0.000000, rf_importance=0.092578, logistic_coef=-0.450757
+
+Feature-group ablation:
+- all_no_pcap_size: n_features=29, logistic_auc=1.000000, random_forest_auc=1.000000
+- packet_counts_direction: n_features=5, logistic_auc=1.000000, random_forest_auc=1.000000
+- payload_duration: n_features=4, logistic_auc=1.000000, random_forest_auc=1.000000
+- signed_lengths_all: n_features=20, logistic_auc=1.000000, random_forest_auc=1.000000
+- signed_lengths_1_to_5: n_features=5, logistic_auc=0.480000, random_forest_auc=1.000000
+- signed_lengths_6_to_20: n_features=15, logistic_auc=1.000000, random_forest_auc=1.000000
+- burst_only: n_features=1, logistic_auc=1.000000, random_forest_auc=1.000000
+
+Mechanism interpretation:
+Phase 29 identifies which observable flow-shape features distinguish default_c2_p1 from baseline_default_off.
+If burst, direction, payload-balance, or signed-length features dominate, the result supports the interpretation that c2 multiplexing with parallel=1 changed traffic shape in a way that reduced detector confidence.
+This supports RQ2 but does not prove universal causality across all proxy systems or all detectors.
+
+Claim boundary:
+This is a mechanism explanation for the PRAXIS lab result. It is not a claim of complete detector bypass or real-world censorship evasion.
