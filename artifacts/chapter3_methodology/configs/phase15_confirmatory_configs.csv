@@ -1,0 +1,4 @@
+role,config_id,browser_profile,mux_mode,parallel,padding_mode,resolver_mode
+baseline,baseline_default_off,default,off,1,none,standard_dns
+best_tradeoff,camouflaged_off,camouflaged,off,1,none,standard_dns
+best_detector,camouflaged_c2,camouflaged,c2,2,none,standard_dns

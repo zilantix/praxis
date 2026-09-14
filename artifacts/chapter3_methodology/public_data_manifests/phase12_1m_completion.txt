@@ -1,0 +1,24 @@
+PRAXIS Phase 12 expanded MAWI public benign feature extraction completion
+
+completed_utc=2026-06-08T01:34:33Z
+client=praxis-client-cycle2
+client_ip=10.42.1.43
+
+Input:
+- /opt/praxis/public_data/sampled/mawi_202403011400_tcp_sample_1m.pcap
+
+Output:
+- /opt/praxis/public_data/features/mawi_public_flows_1m.csv
+- /opt/praxis/public_data/manifests/mawi_public_flows_1m_sha256.txt
+
+Observed:
+- Qualifying public benign TCP flows: 10288
+- CSV lines including header: 10289
+- Input pcap size bytes: 79751606
+
+Dataset role:
+This 1M-packet MAWI-derived feature file is the active public benign baseline for PRAXIS Adaptive Camouflage Controller scoring.
+
+Safety boundary:
+Aggregate flow-shape modeling only.
+No payload reconstruction, user identification, deanonymization, or targeting.

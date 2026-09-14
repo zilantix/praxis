@@ -1,0 +1,27 @@
+PRAXIS Phase 17 Confirm-Best Summary
+
+baseline_score=0.654073
+baseline_detector_probability=1.000000
+baseline_public_distance_norm=0.470992
+baseline_overhead_norm=0.784517
+
+best_tradeoff_config_id=default_c2_p1
+best_tradeoff_score=0.432949
+best_tradeoff_score_delta_vs_baseline=-0.221124
+best_tradeoff_detector_probability=0.487000
+best_tradeoff_detector_delta_vs_baseline=-0.513000
+
+best_detector_config_id=default_c2_p1
+best_detector_probability=0.487000
+best_detector_delta_vs_baseline=-0.513000
+best_detector_score=0.432949
+
+Per-config deltas vs baseline:
+default_c2_p1: score_delta=-0.221124, detector_delta=-0.513000, public_distance_delta=0.109122, overhead_delta=-0.569344
+camouflaged_c2_p1: score_delta=-0.191434, detector_delta=-0.512000, public_distance_delta=0.184032, overhead_delta=-0.508907
+baseline_default_off: score_delta=0.000000, detector_delta=0.000000, public_distance_delta=0.000000, overhead_delta=0.000000
+
+Interpretation rule:
+- If camouflaged_c2_p1 has negative score_delta and negative detector_delta, Phase 17 confirms the Phase 16 result.
+- If default_c2_p1 also has strong detector reduction, the mux/parallelism mechanism is likely the main driver.
+- If only camouflaged_c2_p1 wins, browser camouflage and c2_p1 likely interact.

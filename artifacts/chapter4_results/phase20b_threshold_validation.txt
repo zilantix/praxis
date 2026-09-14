@@ -1,0 +1,69 @@
+PRAXIS Phase 20B Threshold and Statistical Validation
+
+Purpose:
+Evaluate Phase 17 configurations under fresh holdout detectors using public-FPR-calibrated thresholds.
+
+Inputs:
+public_benign=/opt/praxis/public_data/features/mawi_public_flows_20240302_1m.csv
+strict_model=/opt/praxis/solution/models/phase20_holdout_detector_strict_unseen.joblib
+baseline_known_model=/opt/praxis/solution/models/phase20_holdout_detector_baseline_known.joblib
+strict_sessions=/opt/praxis/solution/reports/phase20_holdout_strict_unseen_session_scores.csv
+baseline_known_sessions=/opt/praxis/solution/reports/phase20_holdout_baseline_known_session_scores.csv
+
+Threshold results:
+
+Detector mode: strict_unseen
+target_fpr=0.000
+  baseline_default_off: threshold=0.215821, public_fpr=0.000000, mean_prob=0.959737, min_prob=0.888748, max_prob=0.999884, detection_rate=1.000000
+  camouflaged_c2_p1: threshold=0.215821, public_fpr=0.000000, mean_prob=0.677888, min_prob=0.581604, max_prob=0.767522, detection_rate=1.000000
+  default_c2_p1: threshold=0.215821, public_fpr=0.000000, mean_prob=0.666053, min_prob=0.580497, max_prob=0.767522, detection_rate=1.000000
+target_fpr=0.001
+  baseline_default_off: threshold=0.124043, public_fpr=0.001281, mean_prob=0.959737, min_prob=0.888748, max_prob=0.999884, detection_rate=1.000000
+  camouflaged_c2_p1: threshold=0.124043, public_fpr=0.001281, mean_prob=0.677888, min_prob=0.581604, max_prob=0.767522, detection_rate=1.000000
+  default_c2_p1: threshold=0.124043, public_fpr=0.001281, mean_prob=0.666053, min_prob=0.580497, max_prob=0.767522, detection_rate=1.000000
+target_fpr=0.005
+  baseline_default_off: threshold=0.073671, public_fpr=0.005123, mean_prob=0.959737, min_prob=0.888748, max_prob=0.999884, detection_rate=1.000000
+  camouflaged_c2_p1: threshold=0.073671, public_fpr=0.005123, mean_prob=0.677888, min_prob=0.581604, max_prob=0.767522, detection_rate=1.000000
+  default_c2_p1: threshold=0.073671, public_fpr=0.005123, mean_prob=0.666053, min_prob=0.580497, max_prob=0.767522, detection_rate=1.000000
+target_fpr=0.010
+  baseline_default_off: threshold=0.050643, public_fpr=0.010247, mean_prob=0.959737, min_prob=0.888748, max_prob=0.999884, detection_rate=1.000000
+  camouflaged_c2_p1: threshold=0.050643, public_fpr=0.010247, mean_prob=0.677888, min_prob=0.581604, max_prob=0.767522, detection_rate=1.000000
+  default_c2_p1: threshold=0.050643, public_fpr=0.010247, mean_prob=0.666053, min_prob=0.580497, max_prob=0.767522, detection_rate=1.000000
+target_fpr=0.050
+  baseline_default_off: threshold=0.008728, public_fpr=0.051553, mean_prob=0.959737, min_prob=0.888748, max_prob=0.999884, detection_rate=1.000000
+  camouflaged_c2_p1: threshold=0.008728, public_fpr=0.051553, mean_prob=0.677888, min_prob=0.581604, max_prob=0.767522, detection_rate=1.000000
+  default_c2_p1: threshold=0.008728, public_fpr=0.051553, mean_prob=0.666053, min_prob=0.580497, max_prob=0.767522, detection_rate=1.000000
+
+Detector mode: baseline_known
+target_fpr=0.000
+  baseline_default_off: threshold=0.275220, public_fpr=0.000000, mean_prob=0.998023, min_prob=0.945493, max_prob=1.000000, detection_rate=1.000000
+  camouflaged_c2_p1: threshold=0.275220, public_fpr=0.000000, mean_prob=0.664865, min_prob=0.576523, max_prob=0.751884, detection_rate=1.000000
+  default_c2_p1: threshold=0.275220, public_fpr=0.000000, mean_prob=0.663093, min_prob=0.593084, max_prob=0.751848, detection_rate=1.000000
+target_fpr=0.001
+  baseline_default_off: threshold=0.146155, public_fpr=0.001281, mean_prob=0.998023, min_prob=0.945493, max_prob=1.000000, detection_rate=1.000000
+  camouflaged_c2_p1: threshold=0.146155, public_fpr=0.001281, mean_prob=0.664865, min_prob=0.576523, max_prob=0.751884, detection_rate=1.000000
+  default_c2_p1: threshold=0.146155, public_fpr=0.001281, mean_prob=0.663093, min_prob=0.593084, max_prob=0.751848, detection_rate=1.000000
+target_fpr=0.005
+  baseline_default_off: threshold=0.081139, public_fpr=0.005123, mean_prob=0.998023, min_prob=0.945493, max_prob=1.000000, detection_rate=1.000000
+  camouflaged_c2_p1: threshold=0.081139, public_fpr=0.005123, mean_prob=0.664865, min_prob=0.576523, max_prob=0.751884, detection_rate=1.000000
+  default_c2_p1: threshold=0.081139, public_fpr=0.005123, mean_prob=0.663093, min_prob=0.593084, max_prob=0.751848, detection_rate=1.000000
+target_fpr=0.010
+  baseline_default_off: threshold=0.059682, public_fpr=0.010247, mean_prob=0.998023, min_prob=0.945493, max_prob=1.000000, detection_rate=1.000000
+  camouflaged_c2_p1: threshold=0.059682, public_fpr=0.010247, mean_prob=0.664865, min_prob=0.576523, max_prob=0.751884, detection_rate=1.000000
+  default_c2_p1: threshold=0.059682, public_fpr=0.010247, mean_prob=0.663093, min_prob=0.593084, max_prob=0.751848, detection_rate=1.000000
+target_fpr=0.050
+  baseline_default_off: threshold=0.008000, public_fpr=0.050592, mean_prob=0.998023, min_prob=0.945493, max_prob=1.000000, detection_rate=1.000000
+  camouflaged_c2_p1: threshold=0.008000, public_fpr=0.050592, mean_prob=0.664865, min_prob=0.576523, max_prob=0.751884, detection_rate=1.000000
+  default_c2_p1: threshold=0.008000, public_fpr=0.050592, mean_prob=0.663093, min_prob=0.593084, max_prob=0.751848, detection_rate=1.000000
+
+Probability delta statistical validation:
+strict_unseen default_c2_p1: baseline_mean=0.959737, candidate_mean=0.666053, delta=-0.293684, pct_delta=-30.60%, bootstrap_95ci=[-0.310540,-0.277058], permutation_p_two_sided=0.000100
+strict_unseen camouflaged_c2_p1: baseline_mean=0.959737, candidate_mean=0.677888, delta=-0.281849, pct_delta=-29.37%, bootstrap_95ci=[-0.298791,-0.265504], permutation_p_two_sided=0.000100
+baseline_known default_c2_p1: baseline_mean=0.998023, candidate_mean=0.663093, delta=-0.334930, pct_delta=-33.56%, bootstrap_95ci=[-0.349452,-0.320736], permutation_p_two_sided=0.000100
+baseline_known camouflaged_c2_p1: baseline_mean=0.998023, candidate_mean=0.664865, delta=-0.333158, pct_delta=-33.38%, bootstrap_95ci=[-0.347626,-0.319216], permutation_p_two_sided=0.000100
+
+Interpretation:
+- If detection_rate remains 1.0 across thresholds, claim detector-confidence reduction only.
+- If default_c2_p1 detection_rate drops below baseline at strict public-FPR thresholds, claim threshold-calibrated detection-rate reduction.
+- Do not claim complete detector bypass unless detection_rate is near 0.0 under a defensible public-FPR threshold.
+- The strongest defensible result remains bounded to the PRAXIS lab threat model and tested detectors.

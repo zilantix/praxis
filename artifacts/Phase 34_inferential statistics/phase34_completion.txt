@@ -1,0 +1,39 @@
+PRAXIS Phase 34 inferential statistics completion
+
+completed_utc=2026-07-13T00:30:36Z
+host=praxis-client-upgrade1
+clone_instance=praxis-client-upgrade1
+
+Purpose:
+Convert collected PRAXIS logs, session-level CSVs, detector outputs, and public-baseline datasets into inferential statistical evidence for dissertation Chapters 3-5.
+
+Implemented:
+- Phase 17 detector-confidence tests
+- Phase 17 PRAXIS-score tests
+- Phase 17 compliance tests
+- Phase 17 feature-level tests
+- Phase 20 holdout-detector tests
+- Phase 21 RQ3 success-rate tests
+- Phase 29B artifact-control reference
+- Phase 30 multi-detector inference reference
+- Phase 31 public-baseline sensitivity reference
+- Chapter 4 inferential summary table
+
+Main outputs:
+- /opt/praxis/solution/reports/phase34_inferential_statistics/phase34_inferential_statistics_summary.md
+- /opt/praxis/solution/reports/phase34_inferential_statistics/tables
+- /opt/praxis/solution/reports/phase34_inferential_statistics/manifests/phase34_manifest.csv
+
+Interpretation:
+Phase 34 adds session-level inferential evidence to the completed PRAXIS engineering and evaluation work.
+It supports detector-confidence reduction and adaptive configuration selection under the PRAXIS lab threat model.
+It does not support complete detector bypass, universal detector robustness, real-world censorship evasion, or production blockchain DDNS deployment.
+
+
+
+chapter 4:
+Phase 34 added inferential statistics using session-level analysis. Detector probability decreased from 1.000 for baseline_default_off to 0.487 for default_c2_p1, with a bootstrap 95% confidence interval of [-0.514000, -0.511900] for the mean difference and permutation p=0.000100. Corrected PRAXIS score improved from 0.654073 to 0.432949, with a bootstrap 95% confidence interval of [-0.254584, -0.187908]. Compliance remained 50/50 for all Phase 17 final configurations. RQ3 resolver-mode success showed 30/30 success for standard DNS and decentralized resolution and 0/30 success for DNS-blocked mode.
+
+
+chapter 5:
+The inferential results strengthen the PRAXIS claim but do not expand it beyond the threat model. They support detector-confidence reduction and adaptive configuration selection, not complete detector bypass or real-world censorship evasion.

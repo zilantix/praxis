@@ -1,0 +1,8 @@
+feature_group,n_features,logistic_auc,random_forest_auc,logistic_accuracy_050,random_forest_accuracy_050
+all_no_pcap_size,29,1.0,1.0,1.0,1.0
+packet_counts_direction,5,1.0,1.0,1.0,1.0
+payload_duration,4,1.0,1.0,1.0,1.0
+signed_lengths_all,20,1.0,1.0,1.0,1.0
+signed_lengths_1_to_5,5,0.48,1.0,0.4666666666666667,1.0
+signed_lengths_6_to_20,15,1.0,1.0,1.0,1.0
+burst_only,1,1.0,1.0,1.0,1.0

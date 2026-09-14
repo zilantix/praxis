@@ -1,0 +1,14 @@
+section,analysis,baseline_mean,candidate_or_mode,candidate_mean_or_rate,delta,ci,p_value,interpretation
+Phase 17,detector_proxy_probability,1.0,default_c2_p1,0.48699999999999993,-0.5130000000000001,"[-0.514000,-0.511900]",9.999000099990002e-05,primary confirmatory inference
+Phase 17,praxis_score_phase17,0.6540730660152485,default_c2_p1,0.4329487095399702,-0.22112435647527828,"[-0.254584,-0.187908]",9.999000099990002e-05,primary confirmatory inference
+Phase 17,pcap_size_bytes,21493.32,default_c2_p1,20321.04,-1172.2799999999988,"[-1230.040000,-1115.000000]",9.999000099990002e-05,primary confirmatory inference
+Phase 20,phase20_strict_unseen,0.9597372575787566,default_c2_p1,0.666053082177642,-0.2936841754011146,"[-0.310496,-0.277289]",9.999000099990002e-05,fresh holdout detector inference
+Phase 20,phase20_baseline_known,0.9980227836996405,default_c2_p1,0.6630925813818735,-0.33493020231776693,"[-0.349311,-0.320694]",9.999000099990002e-05,fresh holdout detector inference
+Phase 21,RQ3 success rate,,decentralized_resolution,1.0,,"[0.8864829086095221,1.0]",,resolver-mode compliance inference
+Phase 21,RQ3 success rate,,dns_blocked,0.0,,"[0.0,0.113517091390478]",,resolver-mode compliance inference
+Phase 21,RQ3 success rate,,standard_dns_lab,1.0,,"[0.8864829086095221,1.0]",,resolver-mode compliance inference
+Phase 31,public baseline sensitivity,,cicids2017_mapped,0.3718661335412723,-0.3011837367032921,,,winner=default_c2_p1
+Phase 31,public baseline sensitivity,,mawi_day1,0.4331710407183666,-0.2207006421917152,,,winner=default_c2_p1
+Phase 31,public baseline sensitivity,,mawi_day1_day2,0.4324365719833485,-0.2224510900485888,,,winner=default_c2_p1
+Phase 31,public baseline sensitivity,,mawi_day2,0.4331489522433239,-0.220495837604953,,,winner=default_c2_p1
+Phase 31,public baseline sensitivity,,mawi_plus_cicids_balanced,0.416493675894009,-0.2552804246640713,,,winner=default_c2_p1

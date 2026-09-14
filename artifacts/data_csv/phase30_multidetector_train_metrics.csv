@@ -1,0 +1,6 @@
+model_name,train_positive_count,train_negative_count,train_accuracy,train_precision,train_recall,train_f1,train_auc,public_holdout_count,public_fpr_050
+logistic,170,1000,1.0,1.0,1.0,1.0,1.0,6209,0.0038653567402158156
+random_forest,170,1000,1.0,1.0,1.0,1.0,1.0,6209,0.0
+extra_trees,170,1000,1.0,1.0,1.0,1.0,1.0,6209,0.0
+gradient_boosting,170,1000,1.0,1.0,1.0,1.0,1.0,6209,0.0
+linear_svc_calibrated,170,1000,1.0,1.0,1.0,1.0,1.0,6209,0.002415847962634885

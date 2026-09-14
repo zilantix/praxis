@@ -1,0 +1,7 @@
+config_id,n,mean_holdout_proxy_probability,std_holdout_proxy_probability,detection_rate_050,mean_success,mean_pcap_size_bytes,mean_packet_count,mean_burst_count,prob_delta_vs_baseline_strict_unseen,mode,prob_delta_vs_baseline_baseline_known
+baseline_default_off,50,0.9597372575787566,0.0294975814362035,1.0,1.0,21493.32,68.82,43.08,0.0,strict_unseen,
+camouflaged_c2_p1,50,0.6778881237928513,0.0526549204917719,1.0,1.0,20445.48,53.64,34.08,-0.2818491337859052,strict_unseen,
+default_c2_p1,50,0.666053082177642,0.0527059849991956,1.0,1.0,20321.04,53.78,33.84,-0.2936841754011146,strict_unseen,
+baseline_default_off,50,0.9980227836996404,0.0076483627412292,1.0,1.0,21493.32,68.82,43.08,,baseline_known,0.0
+camouflaged_c2_p1,50,0.6648647558393924,0.0513554575490988,1.0,1.0,20445.48,53.64,34.08,,baseline_known,-0.3331580278602478
+default_c2_p1,50,0.6630925813818735,0.0511783506735413,1.0,1.0,20321.04,53.78,33.84,,baseline_known,-0.3349302023177667

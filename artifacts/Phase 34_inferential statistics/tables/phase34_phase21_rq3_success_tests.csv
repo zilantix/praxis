@@ -1,0 +1,7 @@
+comparison,mode,n,success,failure,success_rate,wilson_95ci_low,wilson_95ci_high,fisher_p_two_sided,table
+phase21_rq3_success_rate,decentralized_resolution,30,30,0,1.0,0.8864829086095221,1.0,,
+phase21_rq3_success_rate,dns_blocked,30,0,30,0.0,0.0,0.113517091390478,,
+phase21_rq3_success_rate,standard_dns_lab,30,30,0,1.0,0.8864829086095221,1.0,,
+phase21_rq3_fisher_exact,standard_dns_lab_vs_dns_blocked,60,,,,,,1.6911233892144735e-17,"[[30, 0], [0, 30]]"
+phase21_rq3_fisher_exact,decentralized_resolution_vs_dns_blocked,60,,,,,,1.6911233892144735e-17,"[[30, 0], [0, 30]]"
+phase21_rq3_fisher_exact,standard_dns_lab_vs_decentralized_resolution,60,,,,,,1.0,"[[30, 0], [30, 0]]"

@@ -1,0 +1,9 @@
+PRAXIS Phase 30 chapter interpretation
+
+Phase 30 evaluated whether the Phase 17 winning configuration, default_c2_p1, remained lower-confidence than baseline_default_off across multiple detector families.
+
+The result was mixed but useful. Tree-based detectors showed the clearest confidence reduction. Random forest reduced mean proxy probability from 0.962200 for baseline_default_off to 0.580344 for default_c2_p1, a delta of -0.381856. Extra trees reduced mean proxy probability from 0.994749 to 0.838589, a delta of -0.156160. The calibrated linear SVC showed a small reduction, while gradient boosting showed only a negligible reduction. Logistic regression did not support the reduction and slightly increased confidence for default_c2_p1.
+
+This means PRAXIS should not claim universal detector robustness. The correct claim is detector-family-dependent confidence reduction, strongest under non-linear tree-based detectors. Binary detection at the 0.50 threshold remained positive for nearly all configurations, so Phase 30 still supports confidence reduction rather than complete detector bypass.
+
+This strengthens the dissertation because it shows that the controller result was not limited to one detector, while also honestly identifying detector-family limitations.

@@ -1,0 +1,25 @@
+PRAXIS Phase 11 public dataset ingestion completion
+
+completed_utc=2026-06-07T18:34:00Z
+client=praxis-client-cycle2
+client_ip=10.42.1.43
+
+Created:
+- /opt/praxis/public_data/mawi/202403011400.pcap.gz
+- /opt/praxis/public_data/sampled/mawi_202403011400_tcp_sample_200k.pcap
+- /opt/praxis/public_data/manifests/mawi_202403011400_sha256.txt
+- /opt/praxis/public_data/logs/phase11_mawi_download.log
+- /opt/praxis/public_data/logs/phase11_mawi_tcp_sample.log
+
+Observed:
+- MAWI compressed pcap downloaded successfully.
+- gzip integrity check passed.
+- SHA256 recorded.
+- 200,000 TCP packet sample created successfully.
+
+Dataset role:
+MAWI TCP sample will be used to build the public benign packet-shape feature model for the PRAXIS Adaptive Camouflage Controller.
+
+Safety boundary:
+Aggregate packet-shape and flow-shape modeling only.
+No payload reconstruction, user identification, deanonymization, or targeting.

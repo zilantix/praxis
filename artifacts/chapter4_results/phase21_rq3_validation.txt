@@ -1,0 +1,28 @@
+PRAXIS Phase 21 RQ3 validation
+
+validated_utc=2026-06-17T03:57:28Z
+client=praxis-client-cycle2
+client_ip=10.42.1.43
+
+Experiment:
+Controlled hostname-resolution test using selected traffic configuration default_c2_p1.
+
+Target:
+https://praxis-destination.praxis:9443/
+
+Validation result:
+- standard_dns_lab: n=30 success=30
+- dns_blocked: n=30 success=0
+- decentralized_resolution: n=30 success=30
+- total sessions: 90
+- success_sum: 60
+
+Interpretation:
+RQ3 is confirmed at the controlled resolver-independence level.
+The selected PRAXIS traffic configuration default_c2_p1 succeeds when hostname resolution is available through lab DNS.
+It fails when DNS is blocked and no fallback is available.
+It succeeds again when DNS is blocked but an alternate decentralized-style hostname mapping is supplied.
+
+Boundary:
+This validates controlled resolver independence using local decentralized-style resolution.
+It does not yet prove production blockchain DDNS integration.

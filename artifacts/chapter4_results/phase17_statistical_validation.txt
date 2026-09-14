@@ -1,0 +1,73 @@
+PRAXIS Phase 17 Statistical Validation
+
+input=/opt/praxis/solution/reports/phase17_confirm_session_scores.csv
+baseline=baseline_default_off
+n_baseline=50
+
+Comparison: camouflaged_c2_p1 vs baseline_default_off
+n_camouflaged_c2_p1=50
+metric=detector_proxy_probability
+baseline_mean=1.000000
+camouflaged_c2_p1_mean=0.488000
+delta=-0.512000
+pct_delta=-51.20%
+bootstrap_95ci_delta=[-0.513200,-0.510700]
+permutation_p_two_sided=0.000100
+metric=public_robust_log_distance_norm
+baseline_mean=0.470992
+camouflaged_c2_p1_mean=0.655024
+delta=0.184032
+pct_delta=39.07%
+bootstrap_95ci_delta=[0.082506,0.284426]
+permutation_p_two_sided=0.000600
+metric=overhead_norm
+baseline_mean=0.784517
+camouflaged_c2_p1_mean=0.275610
+delta=-0.508907
+pct_delta=-64.87%
+bootstrap_95ci_delta=[-0.539604,-0.477822]
+permutation_p_two_sided=0.000100
+metric=praxis_score_phase17
+baseline_mean=0.654073
+camouflaged_c2_p1_mean=0.462639
+delta=-0.191434
+pct_delta=-29.27%
+bootstrap_95ci_delta=[-0.226560,-0.156386]
+permutation_p_two_sided=0.000100
+
+Comparison: default_c2_p1 vs baseline_default_off
+n_default_c2_p1=50
+metric=detector_proxy_probability
+baseline_mean=1.000000
+default_c2_p1_mean=0.487000
+delta=-0.513000
+pct_delta=-51.30%
+bootstrap_95ci_delta=[-0.514000,-0.511900]
+permutation_p_two_sided=0.000100
+metric=public_robust_log_distance_norm
+baseline_mean=0.470992
+default_c2_p1_mean=0.580115
+delta=0.109122
+pct_delta=23.17%
+bootstrap_95ci_delta=[0.013380,0.205326]
+permutation_p_two_sided=0.029297
+metric=overhead_norm
+baseline_mean=0.784517
+default_c2_p1_mean=0.215172
+delta=-0.569344
+pct_delta=-72.57%
+bootstrap_95ci_delta=[-0.597865,-0.540826]
+permutation_p_two_sided=0.000100
+metric=praxis_score_phase17
+baseline_mean=0.654073
+default_c2_p1_mean=0.432949
+delta=-0.221124
+pct_delta=-33.81%
+bootstrap_95ci_delta=[-0.254410,-0.187657]
+permutation_p_two_sided=0.000100
+
+Interpretation guide:
+- Negative detector delta means lower detector confidence than baseline.
+- Negative score delta means better corrected PRAXIS score than baseline.
+- If both deltas are negative with confidence intervals excluding 0, the result is dissertation-grade within this lab threat model.
+- This validates lab-measured detector-confidence reduction, not real-world censorship evasion deployment.

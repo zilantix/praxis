@@ -1,0 +1,24 @@
+PRAXIS Phase 29B chapter interpretation
+
+completed_utc=2026-06-29T00:46:47Z
+host=praxis-client-upgrade1
+
+Result:
+Phase 29B confirms that default_c2_p1 remains strongly distinguishable from baseline_default_off even after removing obvious separator features.
+
+Key findings:
+- no_duration AUC=1.000000
+- no_packet_counts AUC=1.000000
+- no_duration_no_counts AUC=1.000000
+- payload_only AUC=1.000000
+- signed_lengths_only AUC=1.000000
+- burst_only AUC=0.993400
+
+Interpretation:
+The default_c2_p1 mechanism is not only a flow-duration artifact, not only a packet-count artifact, and not only a pcap-size artifact.
+The effect persists in payload-only, signed-packet-length-only, and burst-only feature groups.
+This supports the RQ2 mechanism explanation that c2 multiplexing with parallel=1 changes multiple observable flow-shape dimensions.
+
+Boundary:
+Phase 29B is a mechanism separability test between baseline_default_off and default_c2_p1.
+It is not a proxy-vs-benign detector evaluation and should not be interpreted as detector bypass.

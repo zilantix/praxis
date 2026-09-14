@@ -1,0 +1,9 @@
+config_id,browser_profile,mux_mode,parallel,padding_mode,resolver_mode,description
+baseline_default_off,default,off,1,none,standard_dns,Confirmatory baseline
+camouflaged_off,camouflaged,off,1,none,standard_dns,Camouflage without mux
+default_c2_p1,default,c2,1,none,standard_dns,Default browser with c2 mux and single browser stream
+default_c2_p2,default,c2,2,none,standard_dns,Default browser with c2 mux and two browser streams
+camouflaged_c2_p1,camouflaged,c2,1,none,standard_dns,Camouflaged browser with c2 mux and single browser stream
+camouflaged_c2_p2,camouflaged,c2,2,none,standard_dns,Replicate detector-reduction configuration
+camouflaged_c2_p3,camouflaged,c2,3,none,standard_dns,Camouflaged c2 with intermediate browser parallelism
+camouflaged_c4_p2,camouflaged,c4,2,none,standard_dns,Camouflaged c4 with reduced browser parallelism

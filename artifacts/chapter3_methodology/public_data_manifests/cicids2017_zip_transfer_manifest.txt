@@ -1,0 +1,18 @@
+PRAXIS CICIDS2017 transfer manifest
+
+created_utc=2026-06-29T01:26:15Z
+host=praxis-client-upgrade1
+
+Local EC2 path:
+- /opt/praxis/public_data/cicids2017/MachineLearningCSV.zip
+
+S3 source:
+- s3://praxis-logs-data/praxis/external-datasets/cicids2017/MachineLearningCSV.zip
+
+Purpose:
+Secondary NIDS-style public baseline sanity check for PRAXIS Phase 31.
+
+Boundary:
+CICIDS2017/CICFlowMeter CSV features are not a direct replacement for MAWI packet-derived public Internet traffic.
+MAWI remains the primary public-benign baseline.
+CICIDS is used as a secondary mapped-flow sanity check.

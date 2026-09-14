@@ -1,0 +1,4 @@
+config_id,browser_profile,mux_mode,parallel,padding_mode,resolution_mode,expected_success,description
+default_c2_p1_standard_dns,default,c2,1,none,standard_dns_lab,1,Hostname target using lab DNS
+default_c2_p1_dns_blocked,default,c2,1,none,dns_blocked,0,Hostname target with DNS blocked and no fallback
+default_c2_p1_decentralized_resolution,default,c2,1,none,decentralized_resolution,1,Hostname target with DNS blocked and local decentralized-style resolution

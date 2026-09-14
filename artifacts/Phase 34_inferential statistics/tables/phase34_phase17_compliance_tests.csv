@@ -1,0 +1,6 @@
+comparison,config_id,n,success,failure,success_rate,wilson_95ci_low,wilson_95ci_high,fisher_p_two_sided,table
+phase17_compliance_rate,baseline_default_off,50,50,0,1.0,0.9286499658256813,1.0,,
+phase17_compliance_rate,camouflaged_c2_p1,50,50,0,1.0,0.9286499658256813,1.0,,
+phase17_compliance_rate,default_c2_p1,50,50,0,1.0,0.9286499658256813,1.0,,
+phase17_compliance_fisher_exact,baseline_default_off_vs_default_c2_p1,100,,,,,,1.0,"[[50, 0], [50, 0]]"
+phase17_compliance_fisher_exact,baseline_default_off_vs_camouflaged_c2_p1,100,,,,,,1.0,"[[50, 0], [50, 0]]"

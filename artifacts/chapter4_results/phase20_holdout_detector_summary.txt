@@ -1,0 +1,58 @@
+PRAXIS Phase 20 Holdout Detector Robustness Summary
+
+Purpose:
+Train fresh holdout detectors using Phase 13/16 proxy sessions and the second MAWI public-benign baseline, then evaluate Phase 17 confirm-best sessions.
+
+Inputs:
+phase13_features=/opt/praxis/solution/features/phase14_sweep_features.csv
+phase16_features=/opt/praxis/solution/features/phase16_candidate_features.csv
+phase17_eval_features=/opt/praxis/solution/features/phase17_confirm_features.csv
+public_benign_mawi2=/opt/praxis/public_data/features/mawi_public_flows_20240302_1m.csv
+
+Feature policy:
+pcap_size_bytes is excluded from the holdout detector to reduce public/lab size leakage.
+Features use signed log transform.
+
+Detector mode: strict_unseen
+model_path=/opt/praxis/solution/models/phase20_holdout_detector_strict_unseen.joblib
+train_positive_count=170
+train_negative_count=850
+public_holdout_count=3123
+public_holdout_fpr_at_0.50=0.000000
+train_accuracy=1.000000
+train_precision=1.000000
+train_recall=1.000000
+train_f1=1.000000
+train_auc=1.000000
+
+Phase 17 evaluation under strict_unseen:
+baseline_mean_probability=0.959737
+default_c2_p1: n=50, mean_probability=0.666053, delta_vs_baseline=-0.293684, detection_rate_050=1.000000, mean_success=1.000000
+camouflaged_c2_p1: n=50, mean_probability=0.677888, delta_vs_baseline=-0.281849, detection_rate_050=1.000000, mean_success=1.000000
+baseline_default_off: n=50, mean_probability=0.959737, delta_vs_baseline=0.000000, detection_rate_050=1.000000, mean_success=1.000000
+best_under_strict_unseen=default_c2_p1
+
+Detector mode: baseline_known
+model_path=/opt/praxis/solution/models/phase20_holdout_detector_baseline_known.joblib
+train_positive_count=200
+train_negative_count=1000
+public_holdout_count=3123
+public_holdout_fpr_at_0.50=0.000000
+train_accuracy=1.000000
+train_precision=1.000000
+train_recall=1.000000
+train_f1=1.000000
+train_auc=1.000000
+
+Phase 17 evaluation under baseline_known:
+baseline_mean_probability=0.998023
+default_c2_p1: n=50, mean_probability=0.663093, delta_vs_baseline=-0.334930, detection_rate_050=1.000000, mean_success=1.000000
+camouflaged_c2_p1: n=50, mean_probability=0.664865, delta_vs_baseline=-0.333158, detection_rate_050=1.000000, mean_success=1.000000
+baseline_default_off: n=50, mean_probability=0.998023, delta_vs_baseline=0.000000, detection_rate_050=1.000000, mean_success=1.000000
+best_under_baseline_known=default_c2_p1
+
+Interpretation rule:
+- If default_c2_p1 remains below baseline under both detectors, Phase 17 result is robust to fresh holdout detectors.
+- If only baseline_known shows reduction, the result is robust when baseline proxy behavior is known but selected config is unseen.
+- If neither shows reduction, the Phase 17 result is detector-specific and should be reported with that limitation.
+- Public holdout FPR should be inspected before making strong claims.

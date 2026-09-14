@@ -1,0 +1,4 @@
+role,config_id,browser_profile,mux_mode,parallel,padding_mode,resolver_mode
+baseline,baseline_default_off,default,off,1,none,standard_dns
+best_phase16,camouflaged_c2_p1,camouflaged,c2,1,none,standard_dns
+mux_control,default_c2_p1,default,c2,1,none,standard_dns

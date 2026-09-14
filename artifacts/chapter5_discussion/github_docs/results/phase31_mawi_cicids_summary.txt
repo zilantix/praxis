@@ -1,0 +1,51 @@
+PRAXIS Phase 31 MAWI + CICIDS Public-Baseline Sensitivity
+
+Purpose:
+Test whether public-distance and score conclusions are stable across MAWI and a secondary CICIDS2017 mapped benign baseline.
+
+Baseline source rows:
+mawi_day1_rows=10288
+mawi_day2_rows=10408
+cicids2017_mapped_rows=2273097
+
+Config winners by public baseline:
+Baseline=cicids2017_mapped
+  winner=default_c2_p1
+  winner_score=0.371866
+  default_c2_p1_score=0.371866
+  default_c2_p1_score_delta_vs_baseline=-0.301184
+  default_c2_p1_public_distance_delta_vs_baseline=-0.119619
+
+Baseline=mawi_day1
+  winner=default_c2_p1
+  winner_score=0.433171
+  default_c2_p1_score=0.433171
+  default_c2_p1_score_delta_vs_baseline=-0.220701
+  default_c2_p1_public_distance_delta_vs_baseline=0.110333
+
+Baseline=mawi_day1_day2
+  winner=default_c2_p1
+  winner_score=0.432437
+  default_c2_p1_score=0.432437
+  default_c2_p1_score_delta_vs_baseline=-0.222451
+  default_c2_p1_public_distance_delta_vs_baseline=0.105332
+
+Baseline=mawi_day2
+  winner=default_c2_p1
+  winner_score=0.433149
+  default_c2_p1_score=0.433149
+  default_c2_p1_score_delta_vs_baseline=-0.220496
+  default_c2_p1_public_distance_delta_vs_baseline=0.110918
+
+Baseline=mawi_plus_cicids_balanced
+  winner=default_c2_p1
+  winner_score=0.416494
+  default_c2_p1_score=0.416494
+  default_c2_p1_score_delta_vs_baseline=-0.255280
+  default_c2_p1_public_distance_delta_vs_baseline=0.011534
+
+Interpretation:
+MAWI baselines are primary because they are packet-derived and closest to PRAXIS feature extraction.
+CICIDS2017 is secondary because it is mapped from CICFlowMeter aggregate CSV features.
+If default_c2_p1 remains favorable across MAWI baselines, the public-baseline result is stronger.
+If CICIDS differs, report it as schema-mismatch sensitivity rather than failure.

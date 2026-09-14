@@ -1,0 +1,24 @@
+PRAXIS Phase 12 public benign feature extraction completion
+
+completed_utc=2026-06-07T18:38:11Z
+client=praxis-client-cycle2
+client_ip=10.42.1.43
+
+Input:
+- /opt/praxis/public_data/sampled/mawi_202403011400_tcp_sample_200k.pcap
+
+Output:
+- /opt/praxis/public_data/features/mawi_public_flows.csv
+- /opt/praxis/public_data/logs/phase12_public_features.log
+- /opt/praxis/bin/phase12_extract_public_flows.py
+
+Feature model role:
+This file defines the public benign traffic envelope used by the PRAXIS Adaptive Camouflage Controller.
+
+Direction normalization:
+For public flows, client/server direction is inferred from service-port heuristics where possible.
+Ambiguous flows fall back to first-observed source as positive direction.
+
+Safety boundary:
+Aggregate flow-shape modeling only.
+No payload reconstruction, user identification, deanonymization, or targeting.
